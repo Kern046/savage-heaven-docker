@@ -1,0 +1,29 @@
+---
+version: "3"
+networks:
+  savage-heaven:
+    driver: bridge
+
+services:
+  api:
+    container_name: savage_heaven_api
+    build: api
+    working_dir: /srv/apps/savage-heaven-api
+    env_file:
+      - savage_heaven.env
+    networks:
+      - savage-heaven
+    volumes:
+      - "./volumes/apps:/srv/apps"
+    ports:
+      - "8080:80"
+
+  postgresql:
+    container_name: savage_heaven_postgresql
+    image: postgres
+    env_file:
+      - savage_heaven.env
+    networks:
+      - savage-heaven
+    ports:
+      - "5432"

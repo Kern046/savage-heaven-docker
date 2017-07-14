@@ -5,6 +5,19 @@ networks:
     driver: bridge
 
 services:
+  webapp:
+    container_name: savage_heaven_webapp
+    build: webapp
+    working_dir: /srv/apps/savage-heaven-webapp
+    env_file:
+      - savage_heaven.env
+    networks:
+      - savage-heaven
+    volumes:
+      - "./volumes/apps:/srv/apps"
+    ports:
+      - "8000:3000"
+
   api:
     container_name: savage_heaven_api
     build: api

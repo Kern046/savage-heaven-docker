@@ -40,3 +40,14 @@ services:
       - savage-heaven
     ports:
       - "5432"
+
+  phpgpadmin:
+    container_name: savage_heaven_phpgpadmin
+    image: zhajor/docker-phppgadmin
+    env_file:
+      - savage_heaven.env
+    networks:
+      - savage-heaven
+    ports:
+      - "9090:80"
+      

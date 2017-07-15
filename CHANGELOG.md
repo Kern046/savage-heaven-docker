@@ -2,6 +2,7 @@
 ### Added
 - PM2 integration for the API container
 - PM2 configuration file
+- Artillery tool in API container
 
 ### Changed
 - API daemon runs in a cluster instead of a single instance

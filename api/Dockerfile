@@ -3,4 +3,7 @@ MAINTAINER Kern <kern046@gmail.com>
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
-CMD node /srv/apps/savage-heaven-api/server.js
+RUN \
+  npm -g install pm2
+
+CMD ["pm2-docker", "/srv/apps/savage-heaven-api/server.js"]

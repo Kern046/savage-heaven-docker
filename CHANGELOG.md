@@ -1,3 +1,7 @@
+## [Unrealeased]
+### Added
+- Makefile shortcut commands
+
 ## [0.1.1] - 2017-07-15
 ### Added
 - PM2 integration for the API container

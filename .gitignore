@@ -1,3 +1,4 @@
 savage_heaven.env
 volumes/apps/*
 !volumes/apps/.gitkeep
+*.log

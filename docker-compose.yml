@@ -15,8 +15,6 @@ services:
       - savage-heaven
     volumes:
       - "./volumes/apps:/srv/apps"
-    ports:
-      - "8000:3000"
 
   api:
     container_name: savage_heaven_api
@@ -28,8 +26,6 @@ services:
       - savage-heaven
     volumes:
       - "./volumes/apps:/srv/apps"
-    ports:
-      - "8080:80"
 
   postgresql:
     container_name: savage_heaven_postgresql
@@ -50,4 +46,28 @@ services:
       - savage-heaven
     ports:
       - "9090:80"
-      
+
+
+  # Nginx webserver
+  nginx:
+      container_name: savage_heaven_nginx
+      build: nginx
+      depends_on:
+          - webapp
+          - api
+      env_file:
+          - savage_heaven.env
+      extra_hosts:
+          - "app.savage-heaven.local:127.0.0.1"
+          - "api.savage-heaven.local:127.0.0.1"
+      volumes:
+          # applications
+          - "./volumes/apps:/srv/apps"
+          # nginx
+          - "./volumes/html:/usr/share/nginx/html"
+          - "./volumes/logs/nginx:/var/log/nginx"
+      networks:
+          - savage-heaven
+      ports:
+          - "443:443"
+          - "80:80"

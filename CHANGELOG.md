@@ -1,6 +1,8 @@
 ## [Unrealeased]
 ### Added
 - Makefile shortcut commands
+- Nginx container
+- Nginx proxy for webapp and api containers
 
 ## [0.1.1] - 2017-07-15
 ### Added

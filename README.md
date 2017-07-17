@@ -27,3 +27,11 @@ And now, you just have to launch the containers !
 ```sh
 docker-compose up -d
 ```
+
+Usage
+-------
+
+In the dev environment, you can now access the web application with this URL : ```app.savage-heaven.local```.
+You just have first to mark this host as local in your ```/etc/hosts``` file.
+
+The same can be done with the API, which is accessible at the ```api.savage-heaven.local``` address.

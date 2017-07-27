@@ -1,7 +1,7 @@
 server {
   listen 80;
 
-  server_name api.savage-heaven.local;
+  server_name api.savage-heaven.local api.savage-heaven.local.com;
 
   access_log /var/log/nginx/savage_heaven_api.access.log;
   error_log /var/log/nginx/savage_heaven_api.error.log;

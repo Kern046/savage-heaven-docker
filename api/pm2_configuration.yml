@@ -1,5 +1,5 @@
 apps:
-  - script   : '/srv/apps/savage-heaven-api/server.js'
+  - script   : '/srv/apps/savage-heaven-api/app.js'
     name     : 'API'
     exec_mode: 'cluster'
     instances: 4
